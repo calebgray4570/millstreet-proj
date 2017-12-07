@@ -4,13 +4,17 @@ const initialState = {
     featData: [],
     artist:[],
     artistData: {},
-    editData: {}
+    editData: {},
+    emailData: {},
+    sentEmailData: {}
 }
 
 const GET_FEAT = 'GET_FEAT'
 const GET_ARTIST = 'GET_ARTIST'
 const ADD_ARTIST = 'ADD_ARTIST'
 const EDIT_ARTIST = 'EDIT_ARTIST'
+const ADD_EMAIL = 'ADD_EMAIL'
+const SEND_EMAIL = 'SEND_EMAIL'
 
 export function getFeat() {
     const featInfo = axios.get('/featured')
@@ -50,6 +54,24 @@ export function editArtist(artistURL, editedData ){
         }
 }
 
+export function addEmail(emailData){
+    let sentEmail= axios.post('/addEmail', emailData)
+        .then( res => res.data )
+        return {
+            type: ADD_EMAIL,
+            payload: sentEmail
+        }
+}
+
+export function sendEmail( sentEmailData ){
+    let email = axios.post('/sendEmail', sentEmailData)
+        .then ( res => res.data )
+            return {
+                type: SEND_EMAIL,
+                payload: email
+            }
+}
+
 
 
 
@@ -66,6 +88,12 @@ export default function reducer( state = initialState, action ){
 
         case EDIT_ARTIST + '_FULFILLED':
             return Object.assign({}, state, { editData: action.payload.data})
+        
+        case ADD_EMAIL + '_FULFILLED':
+            return Object.assign({}, state, { emailData: action.payload})
+        
+        case SEND_EMAIL + '_FULFILLED':
+            return Object.assign( {}, state, { sentEmailData: action.payload})
 
         default:
             return state;

@@ -4,7 +4,6 @@ import './AddBand.css'
 
 
 import TextField from 'material-ui/TextField'
-import Toggle from 'material-ui/Toggle'
 import MenuItem from 'material-ui/MenuItem'
 import { DropDownMenu } from 'material-ui/DropDownMenu';
 
@@ -56,6 +55,7 @@ class AddBand extends Component {
   addArtist(){
     let { name, info, img, video} = this.state
     this.props.addArtist({ name, info, img, video })
+    this.props.history.push('/bands')
   }
 
 
@@ -78,7 +78,7 @@ class AddBand extends Component {
               <h1>BIO</h1>
               <TextField  
               multiLine={true}
-              fullWidth={false}
+              fullWidth={true}
               rows={8}  
                 id='bio' onChange= {this.updateArtist} />
 
@@ -99,10 +99,6 @@ class AddBand extends Component {
                 <MenuItem value={6} primaryText='Alternative'/>
                 <MenuItem value={7} primaryText='R&B'/>
               </DropDownMenu>
-
-              <h1>Featured Artist?</h1>
-              <Toggle/>
-
 
               <button onClick = {this.addArtist}>ADD ARTIST</button>
 

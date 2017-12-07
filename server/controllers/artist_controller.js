@@ -27,9 +27,13 @@ module.exports = {
         const dbInstance = req.app.get('db')
         let { name,info,img,video, genre, featured } = req.body
         
-
         dbInstance.edit_artist([ req.params.artistName, name, info, img, video, genre = null, featured ])
-            .then(( response ) => res.status(200).send( response ))
+            .then(( response ) => {
+            if( response[0].featured){
+                dbInstance.create_featured([ response[0].id, name, img ])
+            } else  {dbInstance.remove_featured( [ response[0].id ] )
+         } 
+            res.status(200).send( response )})
     },
 
     deleteArtist: ( req, res, next ) => {

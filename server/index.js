@@ -9,6 +9,8 @@ require('dotenv').config()
 
 const featured_controller = require('./controllers/featured_controller')
 const artist_controller = require('./controllers/artist_controller')
+const contact_controller = require('./controllers/contact_controller')
+const auth_controller = require('./controllers/auth_controller')
 
 const app = express()
 app.use(bodyParser.json() )
@@ -28,48 +30,38 @@ app.use( session({
 app.use(passport.initialize())
 app.use(passport.session())
 
-// passport.use( new OAuthStrategy({
-//     domain: process.env.AUTH_DOMAIN,
-//     clientID: process.env.AUTH_CLIENT_ID,
-//     clientSecret: process.env.AUTH_CLIENT_SECRET,
-//     callbackURL: process.env.AUTH_CALLBACK
-// }, function( accessToken, refreshToken, extraParams, profile, done){
-
-//     const db = app.get('db')
-//     let userData = profile._json
-//     let auth_id = userData.user_id.split( '|' )[1]    
-
-//     db.find_user([ auth_id ]).then( user => {
-//         if ( user[0] ) {
-//             done( null, user[0].id) // number on session
-//         } else {
-//             db.create_user([ userData.name, userData.email, userData.picture, auth_id ])
-//             .then( user => { 
-//                 return done(null, user[0].id)
-//             })
-//         }
-//     })
-
-// } ))
+passport.use( new OAuthStrategy({
+    domain: process.env.AUTH_DOMAIN,
+    clientID: process.env.AUTH_CLIENT_ID,
+    clientSecret: process.env.AUTH_CLIENT_SECRET,
+    callbackURL: process.env.AUTH_CALLBACK
+}, function( accessToken, refreshToken, extraParams, profile, done){
+    done(null, profile )
+}))
 
 
-// app.get('/auth', passport.authenticate('auth0'))
-// app.get('/auth/callback', passport.authenticate('auth0', {
-//     successRedirect: 'http://localhost:3000/#/bands',
-//     failureRedirect: 'http://localhost:3000/#/'
-// }))
+app.get('/auth', passport.authenticate('auth0'))
+app.get('/auth/callback', passport.authenticate('auth0', {
+    successRedirect: 'http://localhost:3000/#/bands',
+    failureRedirect: 'http://localhost:3000/#/'
+}))
 
-// passport.serializeUser(function( ID, done){
-//     done(null, ID) // usually save user id from DB to seesion
-// })
+passport.serializeUser(function( profile, done){
+    done(null, profile) 
+})
 
-// passport.deserializeUser( function( ID, done ){
-//     // req.user === id
-//     const db = app.get('db')
-//     db.find_user_by_session([ ID ]).then ( user => {
-//         done(null, user[0] ) 
-//     })
-// })
+passport.deserializeUser( function( profile, done ){
+    done( null, profile)
+})
+
+
+app.get('/auth', passport.authenticate('auth0'))
+app.get('/auth/callback', passport.authenticate('auth0', {
+    successRedirect: 'http://localhost:3000/#/bands',
+    failureRedirect: 'http://localhost:3000/#/'
+}))
+
+app.get('/auth/logout', auth_controller.logout)
 
 app.get('/featured', featured_controller.readAll)
 
@@ -78,6 +70,9 @@ app.get('/getArtist/:artistName', artist_controller.readSingleArtist )
 app.put('/editArtist/:artistName', artist_controller.editArtist)
 app.post('/addBand', artist_controller.createArtist )
 app.delete('/deleteArtist/:artistName', artist_controller.deleteArtist)
+
+app.post('/addEmail', contact_controller.createEmail )
+app.post('/sendEmail', contact_controller.sendEmail )
 
 
 

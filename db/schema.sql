@@ -22,4 +22,15 @@ img =
 video =
 genre = 
 featured = 
-where name = 
+where name =
+
+
+create table email ( 
+id serial primary key,
+name text,
+email text,
+phone integer,
+message text
+)
+
+delete from featured where  id = $1

@@ -72,6 +72,7 @@ class Edit extends Component {
     
     let { name, info, img, video, featured } = this.state
     this.props.editArtist( artistURL, { name, info, img, video, featured })
+    this.props.history.push('/bands')
   }
 
   deleteArtist(){
@@ -145,7 +146,7 @@ class Edit extends Component {
                 </DropDownMenu>
 
               <h1>Featured Artist?</h1>
-              <Toggle onToggle={this.featuredToggle} id='feat' />
+              <Toggle toggled={this.state.featured} onToggle={this.featuredToggle} id='feat' />
 
               <button onClick={this.editArtist} >UPDATE ARTIST</button>
               <button onClick={this.deleteArtist}>DELETE ARTIST</button>

@@ -20,9 +20,9 @@ class Home extends Component {
       const featDiv = this.props.featData.map( (e,i,a) => {
         return (
           <div key ={i}>
-            <h1>{e.artist_name}</h1>
+            <h1>{e.name}</h1>
             <p></p>
-            <img src={e.artist_img} alt=""/>
+            <img src={e.img} alt=""/>
           </div>
         )
       })
