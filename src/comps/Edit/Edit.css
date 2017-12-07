@@ -1,0 +1,50 @@
+.edit_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    position: relative;
+    padding-bottom: 50px;
+    /* border: 1px solid red; */
+  }
+
+  .edit_div{
+    font-size: 30px;
+    letter-spacing: 4px;
+    margin-top: 25px;
+  }
+  
+  .edit_div #white_line2 {
+    width:  23%;
+    line-height: 300%;
+    margin-top: 5px;
+    border: 2px solid rgba(224, 218, 218, 0.3);
+  }
+
+  .edit_container {
+    height: auto;
+    color: white;
+    font-size: 20px;
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-start; */
+    /* align-items: center; */
+    margin-top: 15px;
+    border: solid solid white;
+    margin-bottom: 50px;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+
+  .edit_container h1 {
+      margin-bottom: 10px;
+  }
+
+  .edit_container input {
+      margin-bottom: 10px;
+  }
+  
+  .edit_container button {
+    margin-bottom: 15px;
+  }

@@ -1,0 +1,118 @@
+
+fake img URL: https://i.imgur.com/7w6kdSt.jpg
+
+fake bio: This is is a fake bio, this person does not exist and has zero talent what
+so ever. If it where not for my good graces this person would not be on this awesome 
+band page.
+
+
+
+<div className="App">
+      
+        <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'/>
+        <video autoPlay loop id="video-background" mute plays-inline>
+          <source src={charleyVid}/>
+        </video>
+
+        <div className= 'body-tab'>
+          <img src={charleyLogo} alt='charley-logo' />
+          <div className='enter-site-button'>
+            <h1>Enter Site</h1>
+          </div>
+        </div> 
+        
+      
+      </div>
+
+
+      body {
+  margin: 0;
+  padding: 0;
+/*  Background fallback in case of IE8 & down, or in case video doens't load, such as with slower connections  */
+  background: #333;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
+#video-background {
+  position: fixed;
+  right: 0; 
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  width: auto; 
+  height: auto;
+  z-index: -100;
+}
+
+.body-tab{
+  /* height: 500px; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 2px solid red; */
+  padding-top: 30%;
+}
+
+.enter-site-button {
+  /* height: 50px; */
+  width: 160px;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #fff;
+  font-family: Oswald, sans-serif;
+  text-align: center;
+  border: 5px solid white;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* padding: 10px; */
+  
+}
+
+.body-tab img {
+
+  /* border: 2px solid red; */
+  margin-bottom: -30px;
+}
+
+
+
+/* h1 span {
+  font-family: sans-serif;
+  letter-spacing: 0;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+h1 span a {
+  color: #fff;
+} */
+
+
+
+<div className='video-container'>
+          <video autoPlay loop id="video-background" plays-inline='true'>
+            <source src={crowd_vid}/>
+          </video>
+        </div>
+
+        <div className= 'header'>
+          <img src={mill_logo} alt='charley-logo' />
+          <h1 id='millstreet'>MILL STREET ENTERTAINMENT</h1>
+          <h1 className='element'>Any Artist | Any Budget | Anywhere</h1>
+          <img src={hamburger} alt='hamburger' id='hamburger'/>
+              <p></p>
+          <div className='nav_div'>
+
+            <a href='/'><button id='one'>HOME</button></a>
+            <Route path='/Bands' component={bands}/>
+            <a href='/Contact'><button id='one'>CONTACT</button></a>
+
+          </div>
+              <p></p>
+        </div> 

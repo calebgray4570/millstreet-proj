@@ -1,0 +1,23 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  background: black;
+  background-attachment: fixed;
+  /* background-size: cover; */
+}
+
+
+.App {
+  font-family:"Avenir", sans-serif !important;
+  margin: 0;
+  padding: 0;
+  background: black;
+  background-attachment: fixed;
+  /* background-size: cover; */
+  }
+  
+
+
+
+

@@ -1,0 +1,182 @@
+
+
+.vid_container{
+
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+overflow: hidden;
+z-index: -100;
+border: 2px solid green;
+}
+
+
+#video-background {
+position: absolute;
+top: -43%;
+left: 0;
+width: 100%;
+height: 100%;
+filter: grayscale(100%) brightness(40%);
+/* border: 2px solid purple; */
+
+}
+
+@media (min-aspect-ratio: 16/9) {
+#video-background {
+height: 98%;
+top: -100%;
+}
+#hamburger{
+display: none;
+}
+}
+
+@media (max-aspect-ratio: 16/9) {
+#video-background {
+width: 300%;
+left: -100%;
+}
+#hamburger{
+display: none;
+}
+}
+
+@media (max-width: 767px) {
+
+.vid_container{
+background: image('./media/concert.png');
+}
+#video-background {
+display: none;
+}
+.header {
+height: 257px;
+}
+#hamburger{
+display: inline;
+}
+
+.nav_div{
+display: none;
+}
+
+}
+
+
+
+.header {
+height: 390px;
+width: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+position: relative;
+/* border: 2px solid blue; */
+/* padding-top: 40%; */
+/* background: rgba(119,136,153, .2) */
+}
+
+
+.header img {
+height: 150px;
+width: 180px;
+/* border: 2px solid red; */
+margin-top: 30px;
+margin-bottom: 12px;
+opacity: 0.6;
+}
+
+.header #millstreet{
+/* border: 2px solid red; */
+letter-spacing: 5px;
+margin-bottom: 12px;
+}
+
+.header h1 {
+font-size: 20px;
+color: white;
+font-weight: 300;
+}
+
+.element {
+/* height: 250px;
+width: 250px; */
+margin: 0 auto;
+/* background-color: red; */
+animation-name: stretch;
+animation-duration: 1.5s; 
+animation-timing-function: ease-out; 
+animation-delay: 0;
+animation-direction: alternate;
+animation-iteration-count: 1;
+animation-fill-mode: none;
+animation-play-state: running;
+}
+
+@keyframes stretch {
+0% {
+transform: scale(1.0);
+/* background-color: red; */
+border-radius: 100%;
+}
+50% {
+transform: scale(1.0);
+/* background-color: orange; */
+}
+100% {
+transform: scale(1.5);
+/* background-color: yellow; */
+}
+}
+
+#hamburger{
+height: 30px;
+width: 35px;
+
+}
+
+.header p {
+width:  50%;
+line-height: 200%;
+margin-top: 30px;
+border: 2px solid rgba(224, 218, 218, 0.3);
+/* background-clip: padding-box; */
+
+}
+
+.nav_div{
+height: 60px;
+width: 78%;
+margin-top: 30px;
+display: flex;
+justify-content: space-around;
+align-items: center;
+flex-direction: row;
+/* border: 2px solid red; */
+}
+
+.nav_div #one {
+/* height: 40px;
+width: 100px; */
+border: none;
+color: white;
+padding: 16px 32px;
+text-align: center;
+text-decoration: none;
+/* display: inline-block; */
+font-size: 16px;
+margin: 4px 2px;
+transition-duration: 0.4s;
+border: 2px solid white;
+outline: none;
+
+background-color: transparent;
+border: 2px solid #e7e7e7;
+}
+
+.nav_div #one:hover {
+background-color: #e7e7e7;
+}

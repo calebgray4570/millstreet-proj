@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: black;
+  background-attachment: fixed;
+  /* background-size: cover; */
+}
+
+.App {
+font-family:"Avenir", sans-serif !important;
+margin: 0;
+padding: 0;
+background: black;
+/* background-attachment: fixed; */
+/* background-size: cover; */
+}
+
+
+
+
+
+.about-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    position: relative;
+    padding-bottom: 50px;
+    /* border: 1px solid red; */
+  }
+  
+  .about-div h1 {
+    font-size: 30px;
+    letter-spacing: 4px;
+    margin-top: 25px;
+    /* border: 1px solid red; */
+    
+  }
+  
+  .about-div #white_line {
+    width:  23%;
+    line-height: 300%;
+    margin-top: 5px;
+    border: 2px solid rgba(224, 218, 218, 0.3);
+  }
+  
+  .about-div p {
+    width: 70%;
+    /* position: relative; */
+    margin-top: 25px;
+    border: none;
+  }
+  
+  .top_band_div{
+    height: auto;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    /* border: 2px solid blue; */
+  
+  }
+  
+  .top_band_div h1 {
+    font-size: 30px;
+    letter-spacing: 4px;
+  }
+  
+  .top_band_div #white_line2 {
+    width:  23%;
+    line-height: 300%;
+    margin-top: 5px;
+    border: 2px solid rgba(224, 218, 218, 0.3);
+  }
+  
+  .band_box {
+    height: auto;
+    display: flex;
+    /* flex-direction: row; */
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: center;
+    margin-top: 15px;
+    /* border: solid solid red; */
+    margin-bottom: 50px;
+    
+  }
+  
+  .band_box div {
+    height: 300px;
+    width: 500px;
+    margin: 15px 15px 15px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white;
+  }
+
+  .band_box h1 {
+    font-size: 25px;
+  }
+
+  .band_box div img {
+    height: 80%;
+    width: 70%;
+    margin-top: 10px;
+    border: 2px solid red;
+  }
+
+  .band_box div p {
+    width:  45%;
+    line-height: 300%;
+    margin-top: 5px;
+    border: 2px solid rgba(224, 218, 218, 0.3);
+  }
+  
+ 
