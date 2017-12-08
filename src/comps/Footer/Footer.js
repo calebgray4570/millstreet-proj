@@ -1,21 +1,40 @@
-import React from 'react'
-// import {Link} from 'react-router-dom'
+import React, { Component } from 'react'
+import axios from 'axios'
 import './Footer.css'
 
-
-export default function Footer() {
+export default class Footer extends Component {
+    constructor(){
+        super()
+        this.state={
+            adminInfo: undefined
+        }
+    }
+    componentDidMount(){
+        axios.get('/auth/me')
+        .then(res => {
+          this.setState({
+            adminInfo: res.data
+          })
+        })
+    }
+    
+    render(){
         return (
-            <nav>
+         <nav>
+            <div className='footer'>
+               <div className='login_div'>
+                  { !this.state.adminInfo ?
+                      <a href={ process.env.REACT_APP_LOGIN }><button>Admin Login</button></a> : null }
 
-                <div className='footer'>
-                    <div className='login_div'>
-                    <a href={ process.env.REACT_APP_LOGIN }><button>Admin Login</button></a>
-                    <a href='http://localhost:3005/auth/logout'><button>Admin Logout</button></a>
-                    </div>
-                    <h2>Copyright © 2017 Mill Street Entertainment LLC</h2>
+                  { this.state.adminInfo ?
+                      <a href='http://localhost:3005/auth/logout'><button>Admin Logout</button></a> : null }
                 </div>
-            
-            </nav>
-        )
+                    <h2>Copyright © 2017 Mill Street Entertainment LLC</h2>
+            </div>
+                
+        </nav>
+            )
+        }
+        
     
 }

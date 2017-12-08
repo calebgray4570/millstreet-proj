@@ -34,3 +34,5 @@ message text
 )
 
 delete from featured where  id = $1
+
+create table admin ( id serial PRIMARY KEY, email text, firstName text, lastName text, authID text )

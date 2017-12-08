@@ -6,6 +6,7 @@ import './AddBand.css'
 import TextField from 'material-ui/TextField'
 import MenuItem from 'material-ui/MenuItem'
 import { DropDownMenu } from 'material-ui/DropDownMenu';
+import {grey50 } from 'material-ui/styles/colors'
 
 
 import Header from '../Header/Header.js'
@@ -16,21 +17,37 @@ import {addArtist} from '../../ducks/reducer.js'
 const styles = {
   customWidth: {
     width: 300,
+  },
+  floatingLabelFocusStyle: {
+    color: grey50,
+  },
+  floatingLabelStyle: {
+    color: grey50,
+  },
+  underlineStyle: {
+    borderColor: grey50,
+  },
+  errorStyle: {
+    color: grey50,
+  },
+  selectedMenuItemStyle: {
+    color: grey50,
   }
 }
 
 class AddBand extends Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.state={
       name: '',
       info: '',
       img: '',
-      video: ''
+      video: '',
     }
     this.updateArtist = this.updateArtist.bind(this)
     this.addArtist = this.addArtist.bind(this)
   }
+
 
   updateArtist(e){
      if(e.target.id === 'name'){
@@ -71,26 +88,47 @@ class AddBand extends Component {
 
             <div className='contact_container'>
 
-              <h1>NAME</h1>
               <TextField
+              floatingLabelText='NAME'
+              floatingLabelStyle={styles.floatingLabelStyle}
+              floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+              underlineFocusStyle={styles.underlineStyle}
+              hintStyle={styles.errorStyle}
               id='name' onChange= {this.updateArtist}/>
               
-              <h1>BIO</h1>
               <TextField  
+              floatingLabelText='EMAIL'
+              floatingLabelStyle={styles.floatingLabelStyle}
+              floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+              underlineFocusStyle={styles.underlineStyle}  
+              hintStyle={styles.errorStyle}      
               multiLine={true}
               fullWidth={true}
-              rows={8}  
-                id='bio' onChange= {this.updateArtist} />
+              rows={8} 
+              underlineShow={true}
+              id='bio' onChange= {this.updateArtist}/>
 
-              <h1>Image URL</h1>
-              <TextField id='img' onChange= {this.updateArtist}/>
+              
+              <TextField 
+                floatingLabelText='IMAGE URL'
+                floatingLabelStyle={styles.floatingLabelStyle}
+                floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                underlineFocusStyle={styles.underlineStyle}  
+                hintStyle={styles.errorStyle}  
+                id='img' onChange= {this.updateArtist}/>
 
-              <h1>Video Link</h1>
-              <TextField id='vid' onChange= {this.updateArtist}/>
+              <TextField 
+                floatingLabelText='YOUTUBE LINK'
+                floatingLabelStyle={styles.floatingLabelStyle}
+                floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                underlineFocusStyle={styles.underlineStyle}  
+                hintStyle={styles.errorStyle}
+                id='vid' onChange= {this.updateArtist}/>
 
-              <h1>GENRE</h1>
               <DropDownMenu
-                style={styles.customWidth}>
+                id='genre'
+                style={styles.customWidth}
+                >
                 <MenuItem value={1} label='Country' primaryText='Country'/>
                 <MenuItem value={2} primaryText='Rock'/>
                 <MenuItem value={3} primaryText='Classic-Rock'/>

@@ -24,7 +24,7 @@ filter: grayscale(100%) brightness(40%);
 
 }
 
-@media (min-aspect-ratio: 16/9) {
+/* @media (min-aspect-ratio: 16/9) {
 #video-background {
 height: 98%;
 top: -100%;
@@ -32,7 +32,7 @@ top: -100%;
 #hamburger{
 display: none;
 }
-}
+} */
 
 @media (max-aspect-ratio: 16/9) {
 #video-background {

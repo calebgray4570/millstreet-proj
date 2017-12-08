@@ -36,22 +36,31 @@ passport.use( new OAuthStrategy({
     clientSecret: process.env.AUTH_CLIENT_SECRET,
     callbackURL: process.env.AUTH_CALLBACK
 }, function( accessToken, refreshToken, extraParams, profile, done){
-    done(null, profile )
+    const dbInstance = app.get('db')
+
+    dbInstance.read_admin([ profile._json.email ])
+        .then( res => {
+            if( res.length >= 1 ) {
+            done(null, res[0].email)
+        } else {
+            done( new Error('not authenticated') )
+        }
+     })
 }))
 
 
-app.get('/auth', passport.authenticate('auth0'))
-app.get('/auth/callback', passport.authenticate('auth0', {
-    successRedirect: 'http://localhost:3000/#/bands',
-    failureRedirect: 'http://localhost:3000/#/'
-}))
 
-passport.serializeUser(function( profile, done){
-    done(null, profile) 
+passport.serializeUser(function( userEmail, done){
+    done(null, userEmail) 
 })
 
-passport.deserializeUser( function( profile, done ){
-    done( null, profile)
+passport.deserializeUser( function( userEmail, done ){
+    const dbInstance = app.get('db')
+    
+        dbInstance.read_admin([ userEmail ])
+            .then( res => {
+                done(null, res[0])
+         })
 })
 
 
@@ -62,6 +71,7 @@ app.get('/auth/callback', passport.authenticate('auth0', {
 }))
 
 app.get('/auth/logout', auth_controller.logout)
+app.get('/auth/me', ( req, res) => res.status(200).send(req.user))
 
 app.get('/featured', featured_controller.readAll)
 
