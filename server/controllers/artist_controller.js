@@ -39,10 +39,9 @@ module.exports = {
     deleteArtist: ( req, res, next ) => {
         const dbInstance = req.app.get('db')
 
-        dbInstance.delete_artist([ req.params.artistName])
+        dbInstance.delete_artist([ req.params.artistName, req.body.featured])
             .then((response) => {
-            res.status(200).send(response)
+                res.status(200).send( response ) 
         })
-        
     }
 }

@@ -4,10 +4,7 @@ import './AddBand.css'
 
 
 import TextField from 'material-ui/TextField'
-import MenuItem from 'material-ui/MenuItem'
-import { DropDownMenu } from 'material-ui/DropDownMenu';
 import {grey50 } from 'material-ui/styles/colors'
-
 
 import Header from '../Header/Header.js'
 import Footer from '../Footer/Footer.js'
@@ -46,6 +43,7 @@ class AddBand extends Component {
     }
     this.updateArtist = this.updateArtist.bind(this)
     this.addArtist = this.addArtist.bind(this)
+    this.onDrop = this.onDrop.bind(this)
   }
 
 
@@ -58,15 +56,23 @@ class AddBand extends Component {
        this.setState({
          info: e.target.value
        })
-     }else if ( e.target.id === 'img'){
-       this.setState({
-         img: e.target.value
-       })
      }else if (e.target.id === 'vid'){
        this.setState({
          video: e.target.value
        })
      }
+  }
+
+  onDrop( e ) {
+    let fileReader = new FileReader()
+    fileReader.onload = ( photo ) => {
+      console.log( photo )
+      this.setState({
+        img: photo.target.result
+      })
+    } 
+    fileReader.readAsDataURL( e.target.files[0] )
+    
   }
 
   addArtist(){
@@ -97,7 +103,7 @@ class AddBand extends Component {
               id='name' onChange= {this.updateArtist}/>
               
               <TextField  
-              floatingLabelText='EMAIL'
+              floatingLabelText='BIO'
               floatingLabelStyle={styles.floatingLabelStyle}
               floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
               underlineFocusStyle={styles.underlineStyle}  
@@ -109,13 +115,14 @@ class AddBand extends Component {
               id='bio' onChange= {this.updateArtist}/>
 
               
-              <TextField 
-                floatingLabelText='IMAGE URL'
-                floatingLabelStyle={styles.floatingLabelStyle}
-                floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                underlineFocusStyle={styles.underlineStyle}  
-                hintStyle={styles.errorStyle}  
-                id='img' onChange= {this.updateArtist}/>
+              <input
+                type='file'
+                onChange={this.onDrop}
+                />
+
+              { this.state.img && <img src={this.state.img} alt='' />}
+              
+              
 
               <TextField 
                 floatingLabelText='YOUTUBE LINK'
@@ -125,7 +132,7 @@ class AddBand extends Component {
                 hintStyle={styles.errorStyle}
                 id='vid' onChange= {this.updateArtist}/>
 
-              <DropDownMenu
+              {/*<DropDownMenu
                 id='genre'
                 style={styles.customWidth}
                 >
@@ -136,7 +143,7 @@ class AddBand extends Component {
                 <MenuItem value={5} primaryText='Bluegrass'/>
                 <MenuItem value={6} primaryText='Alternative'/>
                 <MenuItem value={7} primaryText='R&B'/>
-              </DropDownMenu>
+              </DropDownMenu>*/}
 
               <button onClick = {this.addArtist}>ADD ARTIST</button>
 

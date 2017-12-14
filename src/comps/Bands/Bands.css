@@ -41,29 +41,123 @@
   }
 
   .band_container > div {
-    height: 240px;
-    width: 340px;
+    height: 75%;
+    width: 30%;
+    background-color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: white;
     margin: 15px 15px 15px 15px;
-    border: 2px solid white;
+    border: 2px solid rgb(216, 212, 212);
+    padding-top: 2px;
+    border-radius: 10px;
+    -webkit-transition: all 200ms
+      ease-in;
+        -webkit-transform: scale(1); 
+        -ms-transition: all 200ms ease-in;
+        -ms-transform: scale(1); 
+        -moz-transition: all 200ms ease-in;
+        -moz-transform: scale(1);
+        transition: all 200ms ease-in;
+        transform: scale(1);   
   }
+
+  .band_container > div:hover {
+    box-shadow: 0px 0px 150px #b3afaf;
+    background-color: rgb(56, 55, 55);
+    z-index: 2;
+    -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.2);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.2);   
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.2);
+    transition: all 200ms ease-in;
+    transform: scale(1.2);
+  }
+
+   
+  
+  .band_container a {
+    color: white;
+    letter-spacing: 2px;
+    background-image: linear-gradient( rgb(219, 215, 215), rgb(221, 217, 217) );
+    background-position: 27px 27px;
+    background-size: 3px 3px;
+    background-repeat: repeat-x;
+    font-size: 20px;
+    font-weight:400; 
+    padding: 0.25rem; 
+    text-decoration: none;
+    text-transform: uppercase; 
+    transition: all 250ms ease-out;
+  }
+  .band_container a:hover,
+  .band_container a:focus {
+    background-image: linear-gradient( to top, 
+       rgb(223, 220, 215), 
+       rgb(221, 218, 213) 7%, 
+       lighten( rgb(212, 209, 203), 5%)7%,
+       lighten(rgb(204, 196, 183), 5%));
+    background-position: 0 0;
+    background-size: 100% 100%;
+    border-radius: 7px;
+    color: black;
+    padding: 0.25rem 0.75rem;
+  }
+
+  /* .band_container a:active {
+    background-image: linear-gradient(
+      to bottom,
+      darken(rgb(235, 232, 226), 7%),
+      darken(rgb(238, 236, 231), 7%) 7%,
+      rgb(233, 229, 222), 7%,
+      rgb(226, 224, 220)
+    );
+    border-radius: 7px;
+  } */
+  
 
   .band_container p {
-    width:  40%;
-    line-height: 300%;
-    margin-top: 5px;
-    border: 2px solid rgba(224, 218, 218, 0.3);
+    margin-top: 15px;
+    text-align: center;
+  }
+  /* .band_container #click_name {
+    border: none;
+    color: white;
+    text-align: center;
+    padding: 3px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    outline: none;
+    background-color: transparent;
+    
   }
 
+  .band_container #click_name:hover {
+    background-color: #e7e7e7;
+    } */
+
+  /* .band_container p {
+    width:  40%;
+    line-height: 300%;
+    border: 2px solid rgba(224, 218, 218, 0.3);
+  } */
+
   .band_container div img {
-    height: 140px;
-    width: 180px;
-    margin-top: 6px;
+    /* height: %; */
+    width: 75%;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    /* border: 1px solid red; */
+    
   }
+
+  
 
 
   

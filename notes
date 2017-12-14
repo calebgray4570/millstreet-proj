@@ -118,3 +118,11 @@ h1 span a {
           </div>
               <p></p>
         </div> 
+
+
+        <TextField 
+                floatingLabelText='IMAGE URL'
+                floatingLabelStyle={styles.floatingLabelStyle}
+                floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                underlineFocusStyle={styles.underlineStyle}  
+                hintStyle={styles.errorStyle}

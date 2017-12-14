@@ -1,0 +1,44 @@
+@media (max-width: 375px){
+    
+      .about-div h1 {
+        font-size: 20px;
+      }
+
+      .about-div #white_line {
+          width: 65%;
+      }
+
+      .about-div p {
+        width:81%;
+        font-size: 12px;
+      }
+
+      .about-div h2 {
+          font-size: 13px;
+          letter-spacing: 1px;
+      }
+
+      .top_band_div h1 {
+          font-size: 20px;
+      }
+
+      .top_band_div #white_line2 {
+          width: 65%;
+      }
+
+      .band_box {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          animation: none;
+      }
+
+      .band_box{
+          width: 240%
+      }
+
+      .band_box h1 {
+          font-size: 15px;
+      }
+    }

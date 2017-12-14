@@ -1,8 +1,9 @@
 create table featured (
-id int REFERENCES artist(id),
+id int REFERENCES artist(id) on DELETE CASCADE,
 name text,
 img text
 );
+
 
 
 create table artist (

@@ -13,7 +13,7 @@ const contact_controller = require('./controllers/contact_controller')
 const auth_controller = require('./controllers/auth_controller')
 
 const app = express()
-app.use(bodyParser.json() )
+app.use(bodyParser.json( { limit: '50mb' }) )
 app.use(cors())
 
 massive(process.env.DB_CONNECTION).then( db => {

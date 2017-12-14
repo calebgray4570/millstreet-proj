@@ -1,8 +1,100 @@
+.img_container{
+  /* background-image: image('../../media/concert.png'); */
+  /* position: relative; */
+  width: 100%;
+  height: 300px;
+  position: absolute;
+  box-shadow: 0px 0px 150px #272626 inset;
+  /* left: 0; */
+  }
+
+  
+
+#background_img {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: grayscale(100%) brightness(15%);
+    box-shadow: 0px 0px 250px #c2bcbc;
+    /* border: 2px solid purple; */
+    }
+
+
 .footer{
+  box-shadow: 0px 0px 250px #1d1c1c;
+  
     display: flex;
     flex-direction: column;
     align-items: center;
     color: white;
+    position: relative;
+    /* border: 2px solid red; */
+  }
+
+  .footer p {
+    
+    width:  75%;
+    line-height: 200%;
+    margin-top: 15px;
+    border: 2px solid rgba(177, 171, 171, 0.3);
+  }
+
+  .logo_div {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    letter-spacing: 1px;
+    /* border: 2px solid red; */
+  }
+
+  .footer #mill {
+    height: 130px;
+    width: 140px;
+    margin-top: 30px;
+    margin-bottom: 18px;
+    opacity: 0.6;
+  }
+
+  .footer #tool {
+    height: 110px;
+    width: 220px;
+    border: none;
+    margin-bottom: 20px;
+    background-color: transparent;
+  }
+
+  .call_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .call_div img {
+    height: 60px;
+    width: 60px;
+  }
+
+  .call_div h1 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .facebook_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer #facebook {
+    height: 75px;
+    width: 75px;
+    margin-top: 10px;
+
   }
   
   .login_div button {
@@ -16,6 +108,7 @@
     transition-duration: 0.4s;
     border: 2px solid white;
     outline: none;
+    margin-top: 15px;
   
     background-color: transparent;
     border: 2px solid #e7e7e7;
@@ -27,4 +120,5 @@
   
   .footer h2 {
     margin-top: 10px;
+    margin-bottom: 20px;
   }

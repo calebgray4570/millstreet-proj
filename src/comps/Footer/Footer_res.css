@@ -1,0 +1,40 @@
+@media (min-width: 375px ) {
+
+    .img_container{
+        display: none;
+    }
+
+    .footer {
+        height: 160px;
+    }
+
+    .footer p {
+        margin-top: 5px;
+    }
+    .login_div {
+        display: none;
+    }
+
+    .footer h2 {
+        font-size: 10px;
+        margin-bottom: 10px;
+    }
+
+    #tool, #mill {
+        display: none;
+    }
+
+    .call_div h1 {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+
+    .footer #facebook {
+        height: 55px;
+        width: 55px;
+    }
+
+    .facebook_div h1 {
+        font-size: 12px;
+    }
+}

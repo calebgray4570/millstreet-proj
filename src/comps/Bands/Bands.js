@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import axios from 'axios'
 import './Bands.css'
+import './Bands_res.css'
 
 import { getArtist } from '../../ducks/reducer.js'
 
@@ -48,11 +49,9 @@ class Bands extends Component {
       const artistDiv = this.props.artist.map(( e, i, a ) => {
         return (
           <div key={i}>
-            <h1>{e.name}</h1>
-            <p></p>
+          <p><a href='javascripte:' onClick={() => this.viewProfile(e.name)}>{e.name}</a></p>
             <img src={e.img} alt=''/>
               <div className='button_div'>
-                <button onClick={() => this.viewProfile(e.name)}>View Profile</button>
                 {this.state.adminInfo ? 
                   <button key={i} onClick={() => this.viewEdit(e.name)}>Edit Profile</button> : null
               }
@@ -67,7 +66,7 @@ class Bands extends Component {
             <Header/>
 
             <div className='band_div'>
-                <h1>BANDS</h1>
+                <h1>MILL STREET PRESENTS</h1>
                 <p id='white_line2'></p> 
                 {addButton}
             </div>

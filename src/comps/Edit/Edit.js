@@ -6,9 +6,8 @@ import './Edit.css'
 import {editArtist} from '../../ducks/reducer'
 
 import TextField from 'material-ui/TextField'
+import {grey50 } from 'material-ui/styles/colors'
 import Toggle from 'material-ui/Toggle'
-import MenuItem from 'material-ui/MenuItem'
-import { DropDownMenu } from 'material-ui/DropDownMenu';
 
 import Header from '../Header/Header.js'
 import Footer from '../Footer/Footer.js'
@@ -18,6 +17,18 @@ import Footer from '../Footer/Footer.js'
 const styles = {
   customWidth: {
     width: 300,
+  },
+  floatingLabelFocusStyle: {
+    color: grey50,
+  },
+  floatingLabelStyle: {
+    color: grey50,
+  },
+  underlineStyle: {
+    borderColor: grey50,
+  },
+  errorStyle: {
+    color: grey50,
   }
 }
 
@@ -37,6 +48,7 @@ class Edit extends Component {
     this.editArtist = this.editArtist.bind(this)
     this.deleteArtist = this.deleteArtist.bind(this)
     this.featuredToggle = this.featuredToggle.bind(this)
+    this.onDrop = this.onDrop.bind(this)
   }
 
   artistToState( e ){
@@ -48,15 +60,23 @@ class Edit extends Component {
       this.setState({
         info: e.target.value
       })
-    }else if ( e.target.id === 'img'){
-      this.setState({
-        img: e.target.value
-      })
     }else if (e.target.id === 'vid'){
       this.setState({
         video: e.target.value
       })
     }
+  }
+
+  onDrop( e ) {
+    let fileReader = new FileReader()
+    fileReader.onload = ( photo ) => {
+      console.log( photo )
+      this.setState({
+        img: photo.target.result
+      })
+    } 
+    fileReader.readAsDataURL( e.target.files[0] )
+    
   }
 
   featuredToggle(e){
@@ -117,35 +137,45 @@ class Edit extends Component {
             
             <div className='edit_container'>
             
-              <h1>NAME</h1>
-              <TextField id='name'  onChange={(e) => this.artistToState(e)} value={this.state.name} />
+            <TextField 
+              floatingLabelText='NAME'
+              floatingLabelStyle={styles.floatingLabelStyle}
+              floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+              underlineFocusStyle={styles.underlineStyle}
+              hintStyle={styles.errorStyle}
+              id='name'  onChange={(e) => this.artistToState(e)} value={this.state.name} />
                           
-              <h1>BIO</h1>
               <TextField 
+                floatingLabelText='BIO'
+                floatingLabelStyle={styles.floatingLabelStyle}
+                floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                underlineFocusStyle={styles.underlineStyle}
+                hintStyle={styles.errorStyle}
                 multiLine={true}
                 fullWidth={true}
                 rows={8}
                 id='bio' onChange={(e) => this.artistToState(e)} value={this.state.info}/>
-            
-              <h1>Image URL</h1>
-              <TextField id='img' onChange={(e) => this.artistToState(e)} value={ this.state.img} />
-            
-              <h1>Video Link</h1>
-              <TextField id='vid' onChange={(e) => this.artistToState(e)} value={this.state.video} />
 
-              <h1>GENRE</h1>
-              <DropDownMenu
-                style={styles.customWidth}>
-                <MenuItem value={1} label='Country' primaryText='Country'/>
-                <MenuItem value={2} primaryText='Rock'/>
-                <MenuItem value={3} primaryText='Classic-Rock'/>
-                <MenuItem value={4} primaryText='Pop'/>
-                <MenuItem value={5} primaryText='Bluegrass'/>
-                <MenuItem value={6} primaryText='Alternative'/>
-                <MenuItem value={7} primaryText='R&B'/>
-                </DropDownMenu>
+                <h1>IMAGE UPLOAD</h1>
+                <input
+                  type='file'
+                  onChange={this.onDrop}
+                />
 
-              <h1>Featured Artist?</h1>
+                { this.state.img && <img src={this.state.img} alt='' />}
+
+              
+              <TextField 
+                floatingLabelText='YOUTUBE LINK'
+                floatingLabelStyle={styles.floatingLabelStyle}
+                floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                underlineFocusStyle={styles.underlineStyle}
+                hintStyle={styles.errorStyle}
+                id='vid' onChange={(e) => this.artistToState(e)} value={this.state.video} />
+
+              
+
+              <h1 className='toggled_h1'>Featured Artist?</h1>
               <Toggle toggled={this.state.featured} onToggle={this.featuredToggle} id='feat' />
 
               <button onClick={this.editArtist} >UPDATE ARTIST</button>

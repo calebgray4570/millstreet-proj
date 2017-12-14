@@ -3,12 +3,14 @@ import { connect } from 'react-redux';
 import Youtube from 'react-youtube'
 import axios from 'axios'
 import './Profile.css'
+import './Profile_res.css'
 
 
 import Header from '../Header/Header.js'
 import Footer from '../Footer/Footer.js'
 
-import mill_logo from './millstreet_words.pngf.jpg'
+import mill_logo from '../../media/millstreet_words.pngf.jpg'
+import phone_icon from '../../media/phone-icon.png'
 
 class Profile extends Component {
   constructor( props){
@@ -50,23 +52,27 @@ class Profile extends Component {
                 <p id='white_line2'></p> 
             </div>
 
+            <div className='flex_container'>
 
-            <div className='profile_container'>
-              <img src={this.state.artist.img} alt=''/>
-              <p>{this.state.artist.info}</p>
-              
-              {this.state.artist && <Youtube
-                videoId={this.state.artist.video.split('?v=')[1] }
-                opts={opts}
-              />}
+                <div className='profile_container'>
+                  <img src={this.state.artist.img} alt=''/>
+                  <p>{this.state.artist.info}</p>
+                  
+                  {this.state.artist && <Youtube 
+                    videoId={this.state.artist.video.split('?v=')[1] }
+                    opts={opts}
+                  />}
 
-            </div>
+                </div>
 
-            <div className='contactInfo_container'>
-                <img src={mill_logo} alt=''/>
-                <h1>CALL & BOOK TODAY!</h1>
-                <p id='white_line2'></p>
-                <h1>###-###-####</h1>
+                <div className='contactInfo_container'>
+                    <img src={mill_logo} alt=''/>
+                    <img id='phone' src={phone_icon} alt=''/>
+                    <h1>CALL & BOOK TODAY!</h1>
+                    <p id='white_line2'></p>
+                    <h1>615-481-2216</h1>
+                </div>
+
             </div>
             
 

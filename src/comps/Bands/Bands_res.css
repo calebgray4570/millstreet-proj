@@ -1,0 +1,37 @@
+@media (max-width: 375px ) {
+    .band_div {
+        font-size: 20px;
+    }
+
+    .band_div #white_line2 {
+        width: 65%;
+    }
+
+    .band_container {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-around;
+        justify-content: center;
+    }
+
+    .band_container > div {
+        width: 40%
+    }
+
+    .band_container > div:active, input:focus {
+        background-color: #e7e7e7;
+        z-index: 2;
+        -webkit-transition: all 200ms ease-in;
+        -webkit-transform: scale(0.5);
+        -ms-transition: all 200ms ease-in;
+        -ms-transform: scale(0.5);   
+        -moz-transition: all 200ms ease-in;
+        -moz-transform: scale(0.5);
+        transition: all 200ms ease-in;
+        transform: scale(0.5);
+    }
+
+    .band_container a {
+        font-size: 14px;
+    }
+}

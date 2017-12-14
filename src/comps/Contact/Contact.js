@@ -5,6 +5,9 @@ import './Contact.css'
 import TextField from 'material-ui/TextField'
 import {grey50 } from 'material-ui/styles/colors'
 
+import mill_logo from '../../media/millstreet_words.pngf.jpg'
+import phone_icon from '../../media/phone-icon.png'
+
 import Header from '../Header/Header.js'
 import Footer from '../Footer/Footer.js'
 
@@ -108,42 +111,54 @@ class Contact extends Component {
               <p id='white_line2'></p>
             </div> 
 
-            <div className='contact_container'>
+            <div className='flex_div'>
 
-              <TextField
-                floatingLabelText='NAME'
-                floatingLabelStyle={styles.floatingLabelStyle}
-                floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                underlineFocusStyle={styles.underlineStyle}
-                hintStyle={styles.errorStyle}
-                id='name' onChange={this.emailToState} value={this.state.name}/>
-              
-              <TextField
-                floatingLabelText='EMAIL'
-                floatingLabelStyle={styles.floatingLabelStyle}
-                floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                underlineFocusStyle={styles.underlineStyle}
-                id='email' onChange={this.emailToState} fullWidth={false} value={this.state.email}/>
+              <div className='contact_container'>
 
-              
-              <TextField 
-                floatingLabelStyle={styles.floatingLabelStyle}
-                floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                underlineFocusStyle={styles.underlineStyle}
-                floatingLabelText='PHONE' 
-                id='phone' onChange={this.emailToState} value={this.state.phone}/>
+                <TextField
+                  floatingLabelText='NAME'
+                  floatingLabelStyle={styles.floatingLabelStyle}
+                  floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                  underlineFocusStyle={styles.underlineStyle}
+                  hintStyle={styles.errorStyle}
+                  id='name' onChange={this.emailToState} value={this.state.name}/>
+                
+                <TextField
+                  floatingLabelText='EMAIL'
+                  floatingLabelStyle={styles.floatingLabelStyle}
+                  floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                  underlineFocusStyle={styles.underlineStyle}
+                  id='email' onChange={this.emailToState} fullWidth={false} value={this.state.email}/>
 
-              <TextField
-                multiLine={true}
-                fullWidth={true}
-                rows={10} 
-                floatingLabelStyle={styles.floatingLabelStyle}
-                floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
-                underlineFocusStyle={styles.underlineStyle}
-                floatingLabelText='MESSAGE'  
-                id='message' onChange={this.emailToState} value={this.state.message}/>
+                
+                <TextField 
+                  floatingLabelStyle={styles.floatingLabelStyle}
+                  floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                  underlineFocusStyle={styles.underlineStyle}
+                  floatingLabelText='PHONE' 
+                  id='phone' onChange={this.emailToState} value={this.state.phone}/>
 
-              <button onClick={this.sendEmail}>SEND</button>
+                <TextField
+                  multiLine={true}
+                  fullWidth={true}
+                  rows={10} 
+                  floatingLabelStyle={styles.floatingLabelStyle}
+                  floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
+                  underlineFocusStyle={styles.underlineStyle}
+                  floatingLabelText='MESSAGE'  
+                  id='message' onChange={this.emailToState} value={this.state.message}/>
+
+                <button onClick={this.sendEmail}>SEND</button>
+
+              </div>
+
+              <div className='millstreet_container'>
+                <img id='logo' src={mill_logo} alt=''/>
+                <img id='phone' src={phone_icon} alt=''/>
+                <h1>CALL & BOOK TODAY!</h1>
+                <p></p>
+                <h2>615-481-2216</h2>
+              </div>
 
             </div>
 
