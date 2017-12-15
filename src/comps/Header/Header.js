@@ -28,8 +28,9 @@ export default function Header() {
                     <img id='mill-logo' src={mill_logo} alt='charley-logo' />
                     <h1 id='millstreet'>MILL STREET ENTERTAINMENT</h1>
                     <h1 id='slogan' className='element'>Any Artist | Any Budget | Anywhere</h1>
-                    <IconMenu
-                        // iconStyle={{ height:'40', width:'50'}}
+                    <div className='icon_menu'><IconMenu
+                        iconStyle={{ height:'40', width:'50', position: 'reletive', left: ''}}
+                        style={{ height:'40', width:'50', position: 'reletive', margin:'0', padding:'0'}}
                         className='hamburger'
                         iconButtonElement={<IconButton >< MenuIcon/></IconButton>}
                         anchorOrigin={{horizontal: 'right', vertical: 'bottom'}}
@@ -38,7 +39,7 @@ export default function Header() {
                         <Link to='/'><MenuItem primaryText="HOME" /></Link>
                         <Link to='/bands'><MenuItem primaryText="ACTS" /></Link>
                         <Link to='/contact'><MenuItem primaryText="CONTACT" /></Link>
-                    </IconMenu>                
+                    </IconMenu></div>             
                         <p id='p'></p>
                 
                     <div className='nav_div'>

@@ -33,15 +33,35 @@ class Profile extends Component {
   }
   
   render () {
-
-    const opts = {
-      height: '390',
-      width: '640',
+    let w = window.innerWidth 
+    let opts = {}
+     if (w <= 379 ){ opts = { 
+      height: '200',
+      width: '250',
       playerVars: {
         autoplay:1 
+       } 
+     } } else {
+         opts = {
+          height: '390',
+          width: '640',
+          playerVars: {
+            autoplay:1 
+           }
+         }
+         
        }
-    }
-    console.log(this.state.artist)
+    console.log(w)
+    // const opts = { 
+    //   height: '200',
+    //   width: '270',
+    //   height: '390',
+    //   width: '640',
+    //   playerVars: {
+    //     autoplay:1 
+    //    }
+    // }
+    // console.log(this.state.artist)
     return (
          <div className="Profile">
 
@@ -58,10 +78,10 @@ class Profile extends Component {
                   <img src={this.state.artist.img} alt=''/>
                   <p>{this.state.artist.info}</p>
                   
-                  {this.state.artist && <Youtube 
+                  <div className='youtube'>{this.state.artist && <Youtube 
                     videoId={this.state.artist.video.split('?v=')[1] }
                     opts={opts}
-                  />}
+                  />}</div>
 
                 </div>
 

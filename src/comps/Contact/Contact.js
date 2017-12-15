@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Contact.css'
+import './Contact_res.css'
 
 import TextField from 'material-ui/TextField'
 import {grey50 } from 'material-ui/styles/colors'

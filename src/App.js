@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import './reset.css';
 import { connect } from 'react-redux';
-import {Route, HashRouter,Switch} from 'react-router-dom';
+import {Route, HashRouter } from 'react-router-dom';
+import { AnimatedSwitch } from 'react-router-transition'
 
 
 import Home from './comps/Home/Home.js'
@@ -18,7 +19,13 @@ class App extends Component {
     return (
       <HashRouter>
          <div className="App">
-          <Switch>
+
+          <AnimatedSwitch
+            atEnter={{ opacity: 0 }}
+            atLeave={{ opacity: 0 }}
+            atActive={{ opacity: 1 }}
+            className="switch-wrapper"
+          >
             
             <Route exact path='/' component={Home}/>
             <Route path='/bands' component={Bands}/>
@@ -29,7 +36,8 @@ class App extends Component {
             
             
             
-          </Switch>
+          </AnimatedSwitch>
+
         </div>
       </HashRouter>
     );
@@ -37,9 +45,8 @@ class App extends Component {
 }
 
 function mapStateToProps( state ){
-  return{
-    state
-  }
+  return state
+  
 }
 
 export default connect( mapStateToProps ) ( App );
