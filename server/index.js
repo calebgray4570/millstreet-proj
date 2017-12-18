@@ -27,7 +27,7 @@ app.use( session({
 }))
 
 
-app.use(express.static(__dirname + '/../build'))
+app.use( express.static( __dirname + '/../build' ))
 
 app.use(passport.initialize())
 app.use(passport.session())
@@ -68,8 +68,8 @@ passport.deserializeUser( function( userEmail, done ){
 
 app.get('/auth', passport.authenticate('auth0'))
 app.get('/auth/callback', passport.authenticate('auth0', {
-    successRedirect: 'http://localhost:3000/#/bands',
-    failureRedirect: 'http://localhost:3000/#/'
+    successRedirect: process.env.SUCCSESS_REDIRECT,
+    failureRedirect: process.env.FAILURE_REDIRECT
 }))
 
 app.get('/auth/logout', auth_controller.logout)
