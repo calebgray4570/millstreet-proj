@@ -49,7 +49,7 @@ export default class Footer extends Component {
 
                     <div className='facebook_div'>
                         <h1>LIKE US ON FACEBOOK!</h1>
-                        <img  id='facebook' src={facebook_icon} alt=''/>
+                        <a href={'https://www.facebook.com/MillstreetEnt/'}><img onClick={'https://www.facebook.com/MillstreetEnt/'} id='facebook' src={facebook_icon} alt=''/></a>
                     </div>
 
                 </div>

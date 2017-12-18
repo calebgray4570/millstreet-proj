@@ -20,6 +20,8 @@ class App extends Component {
       <HashRouter>
          <div className="App">
 
+         <title>Mill Street Entertainment</title>
+
           <AnimatedSwitch
             atEnter={{ opacity: 0 }}
             atLeave={{ opacity: 0 }}
