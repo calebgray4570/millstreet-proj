@@ -25,7 +25,9 @@ app.use( session({
     saveUninitialized: true,
     resave: false
 }))
-// app.use(express.static(__dirname + '/../build'))
+
+
+app.use(express.static(__dirname + '/../build'))
 
 app.use(passport.initialize())
 app.use(passport.session())

@@ -61,7 +61,7 @@ export default class Footer extends Component {
                       <a href={ process.env.REACT_APP_LOGIN }><button>Admin Login</button></a> : null }
 
                   { this.state.adminInfo ?
-                      <a href='http://localhost:3005/auth/logout'><button>Admin Logout</button></a> : null }
+                      <a href={ process.env.REACT_APP_LOGOUT }><button>Admin Logout</button></a> : null }
                 </div>
                     <h2>Copyright © 2017 Mill Street Entertainment LLC</h2>
             </div>

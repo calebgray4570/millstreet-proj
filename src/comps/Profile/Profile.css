@@ -53,7 +53,7 @@
     height: 475px;
     width: 580px;
     margin-top: 10px;
-    box-shadow:  3px 3px 5px 6px rgb(112, 110, 110);
+    /* box-shadow:  3px 3px 5px 6px rgb(112, 110, 110); */
   }
 
   .profile_container p {
