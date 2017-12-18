@@ -92,10 +92,11 @@ class AddBand extends Component {
               <p id='white_line2'></p>
             </div> 
 
-            <div className='contact_container'>
+            <div className='addBand_container'>
 
               <TextField
               floatingLabelText='NAME'
+              multiLine={true}
               floatingLabelStyle={styles.floatingLabelStyle}
               floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
               underlineFocusStyle={styles.underlineStyle}
@@ -126,6 +127,7 @@ class AddBand extends Component {
 
               <TextField 
                 floatingLabelText='YOUTUBE LINK'
+                multiLine={true}
                 floatingLabelStyle={styles.floatingLabelStyle}
                 floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
                 underlineFocusStyle={styles.underlineStyle}  

@@ -139,6 +139,7 @@ class Edit extends Component {
             
             <TextField 
               floatingLabelText='NAME'
+              multiLine={true}
               floatingLabelStyle={styles.floatingLabelStyle}
               floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
               underlineFocusStyle={styles.underlineStyle}
@@ -167,6 +168,7 @@ class Edit extends Component {
               
               <TextField 
                 floatingLabelText='YOUTUBE LINK'
+                multiLine={true}
                 floatingLabelStyle={styles.floatingLabelStyle}
                 floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
                 underlineFocusStyle={styles.underlineStyle}

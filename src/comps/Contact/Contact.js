@@ -21,6 +21,7 @@ const styles = {
   },
   floatingLabelStyle: {
     color: grey50,
+    
   },
   underlineStyle: {
     borderColor: grey50,
@@ -118,6 +119,7 @@ class Contact extends Component {
 
                 <TextField
                   floatingLabelText='NAME'
+                  multiLine={true}
                   floatingLabelStyle={styles.floatingLabelStyle}
                   floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
                   underlineFocusStyle={styles.underlineStyle}
@@ -126,6 +128,7 @@ class Contact extends Component {
                 
                 <TextField
                   floatingLabelText='EMAIL'
+                  multiLine={true}
                   floatingLabelStyle={styles.floatingLabelStyle}
                   floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
                   underlineFocusStyle={styles.underlineStyle}
@@ -133,6 +136,7 @@ class Contact extends Component {
 
                 
                 <TextField 
+                  multiLine={true}
                   floatingLabelStyle={styles.floatingLabelStyle}
                   floatingLabelFocusStyle={styles.floatingLabelFocusStyle}
                   underlineFocusStyle={styles.underlineStyle}
