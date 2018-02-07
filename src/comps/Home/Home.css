@@ -41,6 +41,10 @@ background: black;
     /* border: 1px solid red; */
     
   }
+
+  .about-div h3 {
+    display: none;
+  }
   
   .about-div #white_line {
     width:  23%;
@@ -53,6 +57,7 @@ background: black;
     width: 70%;
     /* position: relative; */
     margin-top: 25px;
+    line-height: 1.2;
     border: none;
   }
 
@@ -163,6 +168,7 @@ background: black;
   .band_box h1 {
     font-size: 25px;
     margin-top: 10px;
+    text-align: center;
   }
 
   .band_box div img {

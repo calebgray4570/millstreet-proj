@@ -33,6 +33,10 @@
             z-index: -100;
             border: 2px solid green; */
         }
+
+        .nav_div {
+            display: none;
+        }
     
         #video-background {
             display: none;
@@ -57,16 +61,6 @@
             animation: none;
         }
     
-        .icon_menu { 
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            margin-top: 15px;
-            height: 300px;
-            /* border: 2px solid red; */
-            
-        }
         
         #one {
             display: none

@@ -54,7 +54,7 @@ class Contact extends Component {
       })
     } else if ( e.target.id === 'email'){
       this.setState({
-        email: e.target.value
+        email: e.target.value 
       })
     } else if ( e.target.id === 'phone'){
       this.setState({

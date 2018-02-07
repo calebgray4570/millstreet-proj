@@ -46,6 +46,8 @@ class Home extends Component {
                 Nulla vitae convallis ligula. Praesent et suscipit risus. Pellentesque lacinia massa vel metus viverra consequat. Praesent et scelerisque nibh. Aliquam odio eros, tempor et est eu, sollicitudin elementum velit. Ut et interdum libero, sed sollicitudin urna. Proin eu augue a augue ullamcorper accumsan. Mauris lacus sapien, porttitor sed est molestie, laoreet posuere leo. Pellentesque vulputate tortor ac libero aliquet, eget placerat odio vulputate. Etiam sollicitudin turpis eget felis fermentum, nec efficitur orci scelerisque. Etiam at suscipit dui, at mollis lorem. Donec lectus purus, tempus a turpis in, lobortis lobortis lectus. In molestie tristique arcu. Sed eu nulla ante.
                 </p>
                 <h2>CALL & BOOK WITH US TODAY | 615-481-2216</h2>
+                <h3 className="mobile_call">CALL & BOOK WITH US TODAY</h3>
+                <h3 className="mobile_number"> 615-418-2216 </h3>
             </div>
 
             <div className='top_band_div'>

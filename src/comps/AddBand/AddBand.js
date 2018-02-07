@@ -134,18 +134,7 @@ class AddBand extends Component {
                 hintStyle={styles.errorStyle}
                 id='vid' onChange= {this.updateArtist}/>
 
-              {/*<DropDownMenu
-                id='genre'
-                style={styles.customWidth}
-                >
-                <MenuItem value={1} label='Country' primaryText='Country'/>
-                <MenuItem value={2} primaryText='Rock'/>
-                <MenuItem value={3} primaryText='Classic-Rock'/>
-                <MenuItem value={4} primaryText='Pop'/>
-                <MenuItem value={5} primaryText='Bluegrass'/>
-                <MenuItem value={6} primaryText='Alternative'/>
-                <MenuItem value={7} primaryText='R&B'/>
-              </DropDownMenu>*/}
+            
 
               <button onClick = {this.addArtist}>ADD ARTIST</button>
 

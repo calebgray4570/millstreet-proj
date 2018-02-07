@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+  import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios'
 import './Edit.css'
@@ -16,7 +16,7 @@ import Footer from '../Footer/Footer.js'
 
 const styles = {
   customWidth: {
-    width: 300,
+    width: 60,
   },
   floatingLabelFocusStyle: {
     color: grey50,
@@ -178,7 +178,9 @@ class Edit extends Component {
               
 
               <h1 className='toggled_h1'>Featured Artist?</h1>
-              <Toggle toggled={this.state.featured} onToggle={this.featuredToggle} id='feat' />
+              <Toggle
+                style={styles.customWidth}
+                toggled={this.state.featured} onToggle={this.featuredToggle} id='feat' />
 
               <button onClick={this.editArtist} >UPDATE ARTIST</button>
               <button onClick={this.deleteArtist}>DELETE ARTIST</button>

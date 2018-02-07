@@ -51,8 +51,8 @@ class Profile extends Component {
          }
          
        }
-    console.log(w)
-    // const opts = { 
+    // console.log(w)
+    // const opts = {
     //   height: '200',
     //   width: '270',
     //   height: '390',

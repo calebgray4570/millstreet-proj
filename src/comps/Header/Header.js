@@ -3,14 +3,18 @@ import {Link} from 'react-router-dom'
 import './Header.css'
 import './Header_res.css'
 
+import MobileMenu from './Menu'
+
+import styled from 'styled-components'
+
 import crowd_vid from './concert_video.mp4';
 import mill_logo from '../../media/millstreet_logo.png';
 // import hamburger from './hamburger.png';
 
-import IconMenu from 'material-ui/IconMenu'
-import MenuItem from 'material-ui/MenuItem'
-import IconButton from 'material-ui/IconButton'
-import MenuIcon from 'material-ui/svg-icons/navigation/menu'
+// import IconMenu from 'material-ui/IconMenu'
+// import MenuItem from 'material-ui/MenuItem'
+// import IconButton from 'material-ui/IconButton'
+// import MenuIcon from 'material-ui/svg-icons/navigation/menu'
 
 
 export default function Header() {
@@ -28,19 +32,10 @@ export default function Header() {
                     <img id='mill-logo' src={mill_logo} alt='charley-logo' />
                     <h1 id='millstreet'>MILL STREET ENTERTAINMENT</h1>
                     <h1 id='slogan' className='element'>Any Artist | Any Budget | Anywhere</h1>
-                    <div className='icon_menu'><IconMenu
-                        iconStyle={{ height:'40', width:'50', position: 'reletive', left: ''}}
-                        style={{ height:'40', width:'50', position: 'reletive', margin:'0', padding:'0'}}
-                        className='hamburger'
-                        iconButtonElement={<IconButton >< MenuIcon/></IconButton>}
-                        anchorOrigin={{horizontal: 'right', vertical: 'bottom'}}
-                        targetOrigin={{horizontal: 'right', vertical: 'bottom'}}
-                    >
-                        <Link to='/'><MenuItem primaryText="HOME" /></Link>
-                        <Link to='/bands'><MenuItem primaryText="ACTS" /></Link>
-                        <Link to='/contact'><MenuItem primaryText="CONTACT" /></Link>
-                    </IconMenu></div>             
-                        <p id='p'></p>
+
+                    <Wrapper>
+                        <MobileMenu id="mobile_menu"/>
+                    </Wrapper>
                 
                     <div className='nav_div'>
                 
@@ -58,5 +53,16 @@ export default function Header() {
         )
     
 }
+
+const Wrapper = styled.section`
+    display: none;
+
+    @media (max-width: 375px) {
+        display: flex;
+        position: sticky;
+        overflow: hidden;
+    }
+
+`;
 
 
